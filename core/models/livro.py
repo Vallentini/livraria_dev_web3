@@ -1,7 +1,7 @@
 from django.db import models 
 
 from .categoria import Categoria
-
+from .autor import Autor
 from .editora import Editora
 
 class Livro(models.Model):
@@ -15,6 +15,7 @@ class Livro(models.Model):
     Editora = models.ForeignKey(
         Editora, on_delete=models.PROTECT, related_name="livros", null=True, blank=True
     )
+    autores = models.ManyToManyField(Autor, related_name="livros", blank=True)
 
     def __str__(self):
         return f"({self.id}) {self.titulo} ({self.quantidade})"
