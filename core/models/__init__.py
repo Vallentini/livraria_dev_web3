@@ -8,4 +8,4 @@ from .autor import Autor
 
 from .livro import Livro
 
-from .compra import Compra
+from .compra import Compra, ItensCompra
